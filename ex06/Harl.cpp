@@ -1,12 +1,8 @@
 #include "Harl.hpp"
 
-Harl::Harl()
-{
-	std::cout << "Harl was created" << std::endl;
-	std::cout << "Avliable levels for Harl are: DEBUG, INFO, WARNING, ERROR" << std::endl;
-}
+Harl::Harl() {}
 
-Harl::~Harl() { std::cout << "Harl was destroyed" << std::endl; }
+Harl::~Harl() {}
 
 void	Harl::debug() const
 {
@@ -42,8 +38,13 @@ void	Harl::complain(std::string level) const
 			break ;
 	if (i > 3)
 	{
-		std::cout << "Harl doesnt have such level!" << std::endl;
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 		return ;
 	}
-	(this->*methodPtrs[i])();
+	for (int j = i; j < 4; j++)
+	{
+		std::cout << "[ " << levels[j] << " ]" << std::endl;
+		(this->*methodPtrs[j])();
+		std::cout << std::endl;
+	}
 }
