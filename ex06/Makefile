@@ -1,4 +1,4 @@
-NAME = harlFilter
+NAME = ex06
 
 CPP = c++
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
